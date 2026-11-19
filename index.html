@@ -847,7 +847,7 @@ window.addEventListener('resize', function () { clearTimeout(rsT); rsT = setTime
 
 /* ---- boot ---- */
 function boot(data, sample) {
-  IS_SAMPLE = !!sample; init(data); DIDX = {}; DATES.forEach(function (d, i) { DIDX[d] = i; });
+  IS_SAMPLE = !!sample || !!data.sample; init(data); DIDX = {}; DATES.forEach(function (d, i) { DIDX[d] = i; });
   presetRange('mtd'); render(false);
 }
 function fail(msg) { $('app').innerHTML = '<div class="boot"><img src="' + LOGO + '" alt="PNJ"><h2>Chưa tải được dữ liệu</h2><p>' + esc(msg) + '</p><p class="mut">Kiểm tra file <b>data.json</b> đã được tải lên cùng thư mục với trang này chưa.</p></div>'; }
